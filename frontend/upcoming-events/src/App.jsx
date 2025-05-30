@@ -7,7 +7,7 @@ function App() {
   const url = import.meta.env.VITE_API_BASE_URL
 
   useEffect(()=>{
-    axios.get(`${url}/api/events`)
+    axios.get(`${url}/events`)
     .then((response)=>{
       setEvents(response.data || [])
     })
