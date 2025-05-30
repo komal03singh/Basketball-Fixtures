@@ -9,7 +9,7 @@ function App() {
   useEffect(()=>{
     axios.get(`${url}/events`)
     .then((response)=>{
-      setEvents(response.data || [])
+      setEvents(response.data)
       console.log(response.data)
     })
     .catch((error)=>{
