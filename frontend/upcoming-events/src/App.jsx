@@ -43,7 +43,7 @@ function App() {
                     <h4 className='text-lg font-light p-1'>{item.event_home_team}</h4>
                   </div>
 
-                  <div className='flex mt-2 lg:items-center justify-center w-2/12 '>
+                  <div className='flex mt-2 lg:mt-2 justify-center w-2/12 '>
                     <p className='text-3xl font-extrabold italic  bg-gradient-to-r from-[#2370c9] to-[#c4375a] bg-clip-text text-transparent'>V/S</p>
                   </div>
 
