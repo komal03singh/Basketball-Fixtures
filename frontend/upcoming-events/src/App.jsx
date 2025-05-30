@@ -21,7 +21,7 @@ function App() {
   return (
     <>
       <div className='flex h-screen relative '>
-        <h1 className='left-4 text-4xl lg:text-6xl md:text-6xl md:text-center font-bold absolute top-6 text-center md:left-15 lg:top-4 lg:left-38'><span className='text-[#f3efe6]'>Upcoming</span> Basketball Events</h1>
+        <h1 className='left-4 text-4xl lg:text-6xl md:text-6xl md:text-center font-bold absolute top-6 text-center md:left-15 lg:top-4 lg:left-38'>Upcoming Basketball Events</h1>
         <div className='flex h-screen w-full overflow-hidden'>
           <div className='lg:w-1/4 hidden lg:block bg-contain bg-no-repeat' style={{backgroundImage:`url(${stadium})`, backgroundPosition:'center'}}>
           </div>
