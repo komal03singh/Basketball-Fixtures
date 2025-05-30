@@ -4,16 +4,17 @@ import stadium from './assets/stadium.jpeg'
 
 function App() {
   const [events, setEvents] = useState([])
+  const url = import.meta.env.VITE_API_BASE_URL
 
   useEffect(()=>{
-    axios.get('/api/events')
+    axios.get(`${url}/api/events`)
     .then((response)=>{
       setEvents(response.data || [])
     })
     .catch((error)=>{
       console.log("error in fetching data from server",error)
     })
-  },[])
+  },[url])
 
   return (
     <>

@@ -1,8 +1,8 @@
 import express from 'express'
+import cors from 'cors'
 import axios from 'axios'
 
 const app = express()
-
 const port = process.env.PORT || 3000
 
 const date = new Date()
@@ -15,6 +15,13 @@ const today = `${currYear}-${currMonth}-${currDate}`
 
 const API_KEY = 'f8db9b44b617670099360909a043ac6a1d498be434da911a925350ce67457bdb'
 const to = '2025-12-31'
+
+const allowedOrigins = ['http://localhost:5173','https://basketball-fixtures-6fmh.vercel.app/','https://basketball-fixtures-6fmh-sideprojects-fe3706d4.vercel.app/','https://basketball-fixtures-6fmh-git-main-sideprojects-fe3706d4.vercel.app/']
+
+app.use(cors({
+  origin: allowedOrigins,
+  methods: ['GET']
+}))
 
 app.get('/',(req,res)=>{
     res.send("Server is running")
