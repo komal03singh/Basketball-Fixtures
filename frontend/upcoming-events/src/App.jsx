@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import stadium from './assets/stadium.jpeg'
+import demologo from './assets/demologo.jpg'
 
 function App() {
   const [events, setEvents] = useState([])
@@ -21,7 +22,7 @@ function App() {
   return (
     <>
       <div className='flex h-screen relative '>
-        <h1 className='left-4 text-4xl lg:text-6xl md:text-6xl md:text-center font-bold absolute top-6 text-center md:left-15 lg:top-4 lg:left-38'>Upcoming Basketball Events</h1>
+        <h1 className='left-4 text-4xl lg:text-6xl md:text-6xl md:text-center font-bold absolute top-6 text-center md:left-15 lg:top-4 lg:left-38 text-[#e9cbb6]'>Upcoming Basketball Events</h1>
         <div className='flex h-screen w-full overflow-hidden'>
           <div className='lg:w-1/4 hidden lg:block bg-contain bg-no-repeat' style={{backgroundImage:`url(${stadium})`, backgroundPosition:'center'}}>
           </div>
@@ -35,25 +36,25 @@ function App() {
                 <h4 className='text-lg font-light'>{item.league_season}</h4>
               </div>
 
-              <div className='flex flex-col items-center px-10'>
+              <div className='flex flex-col items-center px-4 lg:px-10'>
                 <div className='flex justify-between w-full py-2'>
                   <div className='w-2/12'>
-                    <img className='w-10 h-10 rounded-full mb-1' src={item.event_home_team_logo} alt="home teamlogo" />
+                    <img className='w-10 h-10 rounded-full mb-1' src={item.event_home_team_logo ? item.event_home_team_logo : demologo} alt="home teamlogo" />
                     <h4 className='text-lg font-light p-1'>{item.event_home_team}</h4>
                   </div>
 
-                  <div className='flex items-center justify-center w-2/12 '>
+                  <div className='flex mt-2 lg:items-center justify-center w-2/12 '>
                     <p className='text-3xl font-extrabold italic  bg-gradient-to-r from-[#2370c9] to-[#c4375a] bg-clip-text text-transparent'>V/S</p>
                   </div>
 
                   <div className='flex flex-col items-end w-2/12'>
-                    <img className='w-10 h-10 rounded-full mb-1' src={item.event_away_team_logo} alt="team logo" />
+                    <img className='w-10 h-10 rounded-full mb-1' src={item.event_away_team_logo  ? item.event_home_team_logo : demologo} alt="team logo" />
                     <h4 className='text-lg font-light p-1'>{item.event_away_team}</h4>
                   </div>
                 </div>
               </div>
 
-              <p className='flex justify-center items-center text-base font-light border-t border-white/20 pt-2 mx-10'>{item.event_date} at {item.event_time}</p>
+              <p className='flex justify-center items-center text-base font-light border-t border-white/20 pt-2 mx-6 lg:mx-10'>{item.event_date} at {item.event_time}</p>
 
               </div>
             ))
