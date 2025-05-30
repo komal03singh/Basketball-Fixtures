@@ -10,6 +10,7 @@ function App() {
     axios.get(`${url}/events`)
     .then((response)=>{
       setEvents(response.data || [])
+      console.log(response.data)
     })
     .catch((error)=>{
       console.log("error in fetching data from server",error)
