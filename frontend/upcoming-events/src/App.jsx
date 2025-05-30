@@ -7,7 +7,7 @@ function App() {
   const url = import.meta.env.VITE_API_BASE_URL
 
   useEffect(()=>{
-    axios.get(`${url}`)
+    axios.get('https://basketball-fixtures.onrender.com/events')
     .then((response)=>{
       console.log(response.data)
       setEvents(response.data)
